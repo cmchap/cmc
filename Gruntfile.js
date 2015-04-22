@@ -10,8 +10,8 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 options: {
-                    outputStyle: 'compressed' // nested or compressed
-                    // sourceMap: true,
+                    outputStyle: 'compressed', // nested or compressed
+                    sourceMap: true
                     // imagePath: '',
                     // includePaths: []
                     // more info: https://github.com/sindresorhus/grunt-sass

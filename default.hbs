@@ -30,20 +30,37 @@
 </head>
 <body class="{{body_class}}">
 
+    <nav class="top-bar" data-topbar role="navigation">
+    {{!-- <ul class="title-area"><li class="name"></li></ul> --}}
+    <ul class="title-area">
+        <li class="blog-logo">
+            <a class="blog-logo name" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" />{{@blog.title}}</a>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+            {{navigation}}
+        </ul>
+      </section>
+    </nav>
+
     {{! Everything else gets inserted here }}
     {{{body}}}
 
     {{> "footer"}}
 
     {{! Document borders}}
-    <div class="tborder"></div>
+{{!--     <div class="tborder"></div>
     <div class="rborder"></div>
     <div class="bborder"></div>
-    <div class="lborder"></div>
+    <div class="lborder"></div> --}}
 
-    {{#if @blog.navigation}}
+{{!--     {{#if @blog.navigation}}
         {{navigation}}
-    {{/if}}
+    {{/if}} --}}
 
     {{! Ghost outputs important scripts and data with this tag }}
     {{ghost_foot}}
@@ -51,7 +68,7 @@
     {{! The main JavaScript files }}
     <script type="text/javascript" src="{{asset "js/vendor/foundation.min.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/vendor/background-check.js"}}"></script>
-    <script type="text/javascript" src="{{asset "js/vendor/smoothscroll.js"}}"></script>
+    {{!--<script type="text/javascript" src="{{asset "js/vendor/smoothscroll.js"}}"></script>--}}
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js"></script>
     <script type="text/javascript" src="{{asset "js/abc.js"}}"></script>
 

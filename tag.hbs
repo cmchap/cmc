@@ -2,12 +2,12 @@
 {{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
 
 {{! The big featured header }}
-<nav class="main-nav">
+{{!-- <nav class="main-nav">
     <a href="{{@blog.url}}" class="header-back-btn js-bg-check left">
         <i class="fa fa-chevron-left"></i> Home
     </a>
     {{> "menu-activator-icon"}}
-</nav>
+</nav> --}}
 <header class="main-header js-blog-bg-image {{#if tag.image}}" style="background-image: url({{tag.image}}){{else}}no-cover{{/if}}">
     <div class="main-header-content">
         {{#if @blog.logo}}
