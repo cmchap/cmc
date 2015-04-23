@@ -1431,8 +1431,8 @@ $topbar-dropdown-toggle-color: $header-color;
 // $topbar-dropdown-label-bg: $oil;
 
 // Top menu icon styles
-// $topbar-menu-link-transform: uppercase;
-$topbar-menu-link-font-size: rem-calc(17);
+$topbar-menu-link-transform: none;
+$topbar-menu-link-font-size: $topbar-link-font-size;
 $topbar-menu-link-weight: $font-weight-bold;
 $topbar-menu-link-color: $header-color;
 $topbar-menu-icon-color: $header-color;
@@ -1443,7 +1443,7 @@ $topbar-menu-icon-color-toggled: $header-color;
 // Transitions and breakpoint styles
 // $topbar-transition-speed: 300ms;
 // Using rem-calc for the below breakpoint causes issues with top bar
-$topbar-breakpoint: #{lower-bound($small-range)}; // Change to 9999px for always mobile layout
+$topbar-breakpoint: #{lower-bound($medium-range)}; // Change to 9999px for always mobile layout
 $topbar-media-query: "#{$screen} and (min-width:#{lower-bound($topbar-breakpoint)})";
 
 // Top-bar input styles

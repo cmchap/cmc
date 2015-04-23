@@ -50,9 +50,9 @@
 // Your styles here
 //
 
-* {
-    outline: red solid 1px;
-}
+// * { // debugging
+//     outline: red solid 1px;
+// }
 
 html {
     height: auto;
@@ -61,6 +61,13 @@ body {
     position: relative;
     padding: rem-calc(15);
 }
+a {
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
 
 ::selection {
     // background: $color-main-contrast;
@@ -124,35 +131,52 @@ body {
     }
 }
 
-.top-bar {
+.top-bar, .top-bar.expanded {
     font-family: $headers-font;
     color: $header-font-color;
 
     li {
-        color: inherit;
         a {
             text-decoration: none;
+            text-align: center;
+            &:hover {
+                color: $color-main-contrast;
+                text-decoration: underline;
+            }
         }
-        &:hover{
-            text-decoration: underline;
-            color: $color-main-contrast;
-        }
+
     }
 
     .blog-logo {
+        border: rem-calc(3) solid white;
         img {
             height: 45px;
         }
         a {
+            display: inline-block;
+            height: 45px;
+            font-size: $topbar-link-font-size;
             font-weight: $font-weight-bold;
             color: inherit;
         }
     }
 
-    .toggle-topbar {
-        color: $header-font-color;
+    .navigation {
+        a {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        .fa-bars {
+            margin-left: rem-calc(5);
+            &:hover {
+                color: $color-main-contrast;
+            }
+        }
     }
 }
+
+
 
 .main-header,
 .post-view-header {
@@ -557,17 +581,5 @@ body {
         &.element-light {
             color: $color-main-light;
         }
-    }
-}
-
-@media screen and (max-height: 30.5em) {
-    .main-menu-ovrl nav {
-        height: 70%;
-        li a {
-            font-size: rem-calc(34);
-        }
-    }
-    .main-menu-ovrl ul li {
-        min-height: rem-calc(34);
     }
 }

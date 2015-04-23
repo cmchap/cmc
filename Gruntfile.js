@@ -11,7 +11,7 @@ module.exports = function(grunt) {
             dist: {
                 options: {
                     outputStyle: 'compressed', // nested or compressed
-                    sourceMap: true
+                    sourceMap: true,
                     // imagePath: '',
                     // includePaths: []
                     // more info: https://github.com/sindresorhus/grunt-sass
@@ -23,12 +23,26 @@ module.exports = function(grunt) {
         },
 
         watch: {
+            options: {
+                livereload: true,
+            },
             sass: {
                 files: 'assets/scss/**/*.scss',
-                tasks: ['sass']
+                tasks: ['sass'],
+
+            },
+            livereload: {
+                options: {
+                    livereload: true
+                },
+                files: [
+                    'js/*.js',
+                    'images/{,**/}*.{png,jpg,jpeg,gif,webp,svg}',
+                    '*.hbs',
+                    'assets/scss/**/*.scss',
+                ]
             }
         }
-
     });
 
     grunt.registerTask('default', ['sass', 'watch']);

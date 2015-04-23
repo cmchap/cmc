@@ -15,7 +15,7 @@
 
     {{! Styles - Foundation 5 included}}
 
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
     {{!-- styles for syntax highlighter you will find more here: https://github.com/isagalaev/highlight.js/tree/master/src/styles just change .min.css file name below --}}
@@ -34,9 +34,10 @@
     {{!-- <ul class="title-area"><li class="name"></li></ul> --}}
     <ul class="title-area">
         <li class="blog-logo">
-            <a class="blog-logo name" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" />{{@blog.title}}</a>
+            <a class="name" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" />{{@blog.title}}</a>
         </li>
-        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        {{!-- <li class="toggle-topbar menu-icon navigation"><a href="#"><span>Menu</span></a></li> --}}
+        <li class="toggle-topbar navigation"><a href="#">Menu<i class="fa fa-bars"></i></a></li>
     </ul>
 
       <section class="top-bar-section">
@@ -71,6 +72,6 @@
     {{!--<script type="text/javascript" src="{{asset "js/vendor/smoothscroll.js"}}"></script>--}}
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js"></script>
     <script type="text/javascript" src="{{asset "js/abc.js"}}"></script>
-
+    <script src="//localhost:35729/livereload.js"></script>
 </body>
 </html>
