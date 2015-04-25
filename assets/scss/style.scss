@@ -65,6 +65,7 @@ a {
     text-decoration: none;
     &:hover {
         text-decoration: underline;
+        color: darken($color-main-contrast, 10%)
     }
 }
 
@@ -89,52 +90,13 @@ a {
     background-color: darken($color-main-light, 70%);
 }
 
-// header styles
-.header-back-btn {
-    color: $color-main-dark;
-    border: rem-calc(3) solid $color-main-dark;
-    padding: rem-calc(5) rem-calc(20);
-    text-align: center;
-    text-decoration: none;
-    border-radius: rem-calc(3);
-    font-size: rem-calc(16);
-    font-family: $headers-font;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-left: rem-calc(30);
-    margin-top: rem-calc(30);
-    .fa {
-        font-size: rem-calc(14);
-        -webkit-transition: all .3s;
-        transition: all .3s;
-    }
-    &:hover, &:focus, &:active {
-        color: $color-main-dark;
-        .fa {
-            -webkit-transform: translateX(rem-calc(-5));
-            transform: translateX(rem-calc(-5));
-        }
-    }
-    &.element-dark {
-        color: $color-main-dark;
-        border: rem-calc(3) solid $color-main-dark;
-        &:hover, &:focus, &:active {
-            color: $color-main-dark;
-        }
-    }
-    &.element-light {
-        color: $color-main-light;
-        border: rem-calc(3) solid $color-main-light;
-        &:hover, &:focus, &:active {
-            color: $color-main-light;
-        }
-    }
+.top-bar {
+    height: rem-calc(51);
 }
 
 .top-bar, .top-bar.expanded {
     font-family: $headers-font;
     color: $header-font-color;
-
     li {
         a {
             text-decoration: none;
@@ -150,12 +112,13 @@ a {
     .blog-logo {
         border: rem-calc(3) solid white;
         img {
-            height: 45px;
+            height: 35px;
+            padding-right: rem-calc(5);
         }
         a {
             display: inline-block;
-            height: 45px;
-            font-size: $topbar-link-font-size;
+            height: rem-calc(40);
+            font-size: rem-calc(17);
             font-weight: $font-weight-bold;
             color: inherit;
         }
@@ -163,6 +126,7 @@ a {
 
     .navigation {
         a {
+            font-size: rem-calc(17);
             &:hover {
                 text-decoration: underline;
             }
@@ -174,9 +138,36 @@ a {
             }
         }
     }
+
+    .name {
+        // outline: 1px solid red;
+        margin-top: rem-calc(6);
+    }
 }
 
+.menu {
+    border: rem-calc(2) solid $color-main-dark;
+    border-radius: rem-calc(3);
+}
+.nav-items {
+    margin: rem-calc(5) rem-calc(2.5);
+    border: rem-calc(2) solid $color-main-dark;
+    border-radius: rem-calc(3);
+    @media only screen and (max-width:40.063em) {
+        margin: rem-calc(5) 0px;
+    }
+}
 
+.page-title {
+    span:hover {
+        a {
+            text-decoration: none;
+        }
+        color: $color-main-contrast;
+        box-shadow: inset 0 rem-calc(-10) 0 white, inset 0 rem-calc(-13) 0 $color-main-contrast
+        // text-decoration: underline;
+    }
+}
 
 .main-header,
 .post-view-header {
@@ -216,11 +207,11 @@ a {
     }
 }
 .main-header {
-    padding: rem-calc(120) rem-calc(30);
+    padding: rem-calc(20) rem-calc(30) rem-calc(40) rem-calc(30);
     h1 {
         font-size: rem-calc(60);
         line-height: 1.2;
-        @media screen and (min-width: 48em) {
+        @media only screen and (min-width: 40.063em) {
             font-size: rem-calc(90);
         }
     }
@@ -229,7 +220,7 @@ a {
         font-family: $headers-font;
         font-weight: 700;
     }
-    @media screen and (min-width: 48em) {
+    @media only screen and (min-width: 40.063em) {
         padding: 12% rem-calc(30);
         &.no-cover {
             padding: 10% rem-calc(30);
@@ -247,14 +238,20 @@ a {
         text-align: center;
         -webkit-transition: background-color .2s;
         transition: background-color .2s;
+        a {
+            &:hover {
+                color: $color-main-contrast;
+                text-decoration: underline;
+            }
+        }
         &:first-of-type {
             border-top: solid rem-calc(1) darken($color-main-light, 3%);
         }
         border-bottom: solid rem-calc(1) darken($color-main-light, 3%);
-        &:hover {
-            background-color: darken($color-main-light, 3%);
-        }
-        @media screen and (min-width: 48em) {
+        // &:hover {
+        //     background-color: darken($color-main-light, 3%);
+        //}
+        @media only screen and (min-width: 40.063em) {
             padding: rem-calc(40) rem-calc(30);
         }
     }
@@ -268,19 +265,19 @@ a {
         margin: 0;
         font-size: rem-calc(28);
         line-height: 1.1;
-        a, a:hover, a:focus, a:active {
-            color: inherit;
-            text-decoration: none;
+        a {
+            color: $color-main-dark;
         }
-        @media screen and (min-width: 48em) {
+        @media only screen and (min-width: 40.063em) {
             font-size: rem-calc(42);
             line-height: 1.3;
         }
     }
     .post-meta {
+        font-size: rem-calc(15);
         color: lighten($color-main-dark, 20%);
-        a, a:hover, a:focus, a:active {
-            color: inherit;
+       a {
+            color: $color-main-dark;
         }
     }
 }
@@ -300,12 +297,12 @@ a {
             h1 {
                 font-size: rem-calc(55);
                 line-height: 1.2;
-                @media screen and (min-width: 48em) {
+                 @media only screen and (min-width: 40.063em) {
                     font-size: rem-calc(68);
                 }
             }
         }
-        @media screen and (min-width: 48em) {
+        @media only screen and (min-width: 40.063em) {
             padding: 15% rem-calc(30);
             &.no-cover {
                 padding: 15% rem-calc(30) 5%;
@@ -422,9 +419,9 @@ a {
 .author-info {
     padding: 0;
     position: relative;
-    padding-top: rem-calc(60);
-    padding-bottom: rem-calc(60);
-    margin-bottom: rem-calc(40);
+    padding-top: rem-calc(40);
+    padding-bottom: rem-calc(40);
+    // margin-bottom: rem-calc(40);
     background: darken($color-main-light, 5%);
     .post-author {
         padding-left: rem-calc(30);
@@ -497,38 +494,49 @@ a {
 // footer
 
 .site-footer {
-    background-color: $color-main-dark;
+    background-color: $color-main-light;
     padding: rem-calc(15) rem-calc(30) 0;
-    color: $color-main-light;
+    color: $color-main-dark;
     font-size: rem-calc(14);
-    margin-top: rem-calc(60);
+    margin-top: rem-calc(20);
     a, a:active, a:focus, a:hover {
-        color: inherit;
+        color: $color-main-contrast;
     }
-    @extend %clearfix;
-    .subscribe-button {
-        .fa {
-            vertical-align: middle;
-            margin-left: rem-calc(5);
-        }
-    }
-    .px-themes,
-    .ghost {
-        float: none;
-        text-align: center;
-    }
-    @media screen and (min-width: 48em) {
-        .px-themes {
+    .sub-footer {
+        margin-top: rem-calc(20);
+        .sub-footer-left {
             float: left;
         }
-        .ghost {
+        .sub-footer-right {
             float: right;
         }
-        .px-themes,
-        .ghost {
-            text-align: left;
+        .subscribe {
+            color: $color-main-dark;
+            .fa {
+                vertical-align: middle;
+                padding-left: rem-calc(5);
+            }
+            &:hover {
+                color: $color-main-contrast;
+                text-decoration: underline;
+                .fa {
+                    color: orange;
+                }
+            }
         }
     }
+    // @media screen and (min-width: 48em) {
+    //     .px-themes {
+    //         float: left;
+    //     }
+    //     .ghost {
+    //         float: right;
+    //     }
+    //     .px-themes,
+    //     .ghost {
+    //         text-align: left;
+    //     }
+    // }
 }
 
 // pagination
@@ -539,10 +547,12 @@ a {
     font-weight: bold;
     font-family: $headers-font;
     a, a:active, a:focus, a:hover {
+        width: rem-calc(200);
         color: inherit;
         display: inline-block;
         padding: rem-calc(5) rem-calc(30);
-        border: rem-calc(3) solid $color-main-dark;
+        margin: rem-calc(5);
+        border: rem-calc(2) solid $color-main-dark;
         border-radius: rem-calc(3);
         text-decoration: none;
         .fa {
@@ -550,7 +560,7 @@ a {
         }
     }
     a:hover {
-        &.older-posts {
+        &.newer-posts {
             .fa {
                 -webkit-transition: all .3s;
                 transition: all .3s;
@@ -558,7 +568,7 @@ a {
                 transform: translateX(rem-calc(5));
             }
         }
-        &.newer-posts {
+        &.older-posts {
             .fa {
                 -webkit-transition: all .3s;
                 transition: all .3s;

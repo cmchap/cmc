@@ -1,8 +1,8 @@
-<nav class="pagination" role="navigation">
+<nav class="pagination post" role="navigation">
     {{#if prev}}
-        <a class="newer-posts" href="{{page_url prev}}"><i class="fa fa-chevron-left"></i> Newer Posts</a>
+        <a class="newer-posts" href="{{page_url prev}}">Newer Posts <i class="fa fa-chevron-right"></i></a>
     {{/if}}
     {{#if next}}
-        <a class="older-posts" href="{{page_url next}}">Older Posts <i class="fa fa-chevron-right"></i></a>
+        <a class="older-posts" href="{{page_url next}}"><i class="fa fa-chevron-left"></i> Older Posts</a>
     {{/if}}
 </nav>

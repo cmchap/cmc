@@ -29,7 +29,6 @@ module.exports = function(grunt) {
             sass: {
                 files: 'assets/scss/**/*.scss',
                 tasks: ['sass'],
-
             },
             livereload: {
                 options: {
@@ -38,6 +37,7 @@ module.exports = function(grunt) {
                 files: [
                     'js/*.js',
                     'images/{,**/}*.{png,jpg,jpeg,gif,webp,svg}',
+                    '**/*.hbs',
                     '*.hbs',
                     'assets/scss/**/*.scss',
                 ]
