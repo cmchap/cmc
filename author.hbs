@@ -3,12 +3,6 @@
 
 {{! Everything inside the #author tags pulls data from the author }}
 {{#author}}
-    <nav class="main-nav">
-        <a href="{{@blog.url}}" class="header-back-btn js-bg-check left">
-            <i class="fa fa-chevron-left"></i> Home
-        </a>
-        {{> "menu-activator-icon"}}
-    </nav>
     <header class="main-header js-blog-bg-image {{#if cover}}" style="background-image: url({{cover}}){{else}}no-cover{{/if}}">
         <div class="main-header-content">
             {{#if image}}
@@ -16,17 +10,17 @@
                     <img src="{{image}}" alt="{{name}}">
                 </div>
             {{/if}}
-            <h1 class="author-title js-bg-check">
-                <span>{{name}}</span>
+            <h1 class="author-title page-title js-bg-check">
+                <span><a href="{{url}}">{{name}}</a></span>
             </h1>
             {{#if bio}}
-                <h2 class="author-bio js-bg-check">
-                    <span>{{bio}}</span>
-                </h2>
+                <p class="author-bio js-bg-check">
+                    {{bio}}
+                </p>
             {{/if}}
-            <span class="author-stats js-bg-check">
-                {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}} <a href="{{url}}rss/"><i class="fa fa-rss"></i></a>
-            </span>
+            <a href="{{url}}rss/" class="subscribe author-stats js-bg-check">
+                {{plural ../pagination.total empty='No posts yet' singular='% post' plural='% posts'}}<i class="fa fa-rss"></i>
+            </a>
         </div>
     </header>
 {{/author}}

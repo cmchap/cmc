@@ -40,8 +40,8 @@ $h4-font-size: rem-calc(23);
 $h5-font-size: rem-calc(18);
 $h6-font-size: 1rem;
 
-$link-color: #1071BC;
-$header-color: #000;
+$link-color: $color-main-contrast;
+$header-color: $color-main-dark;
 
 
 // custom theme mixins

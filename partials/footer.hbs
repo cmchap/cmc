@@ -1,31 +1,4 @@
 <footer class="site-footer">
-    {{!-- you can remove it --}}
-{{!--         <section class="poweredby ghost">
-            Proudly published with <a href="https://ghost.org">Ghost</a>
-        </section>
-        <section class="poweredby px-themes">
-            Theme by pxThemes - <a href="http://pxt.be">Ghost Themes</a> <a class="subscribe-button" href="{{@blog.url}}/rss/"><i class="fa fa-rss"></i></a> <br>
-            Read more about ABC Theme: <a href="http://julian.io/ghost-theming-with-zurb-foundation-and-scss/">Ghost theming blog post</a>
-        </section> --}}
-    {{!-- remove it --}}
-    <section class="author-info">
-        <div class="row">
-            <section class="post-author small-12 columns">
-                {{#if posts.[0].author.image}}
-                    <img src="{{posts.[0].author.image}}" class="post-author-avatar" alt="{{posts.[0].author.name}}">
-                {{/if}}
-                {{#if posts.[0].author.name}}
-                    <h1><a href="{{posts.[0].author.url}}" class="author-link-name">{{posts.[0].author.name}}</a></h1>
-                {{/if}}
-                {{#if posts.[0].author.website}}
-                    <p><a href="{{posts.[0].author.website}}" class="author-website">{{posts.[0].author.website}}</a></p>
-                {{/if}}
-                {{#if posts.[0].author.bio}}
-                    <p>{{posts.[0].author.bio}}</p>
-                {{/if}}
-            </section>
-        </div>
-    </section>
     <section class="sub-footer">
         <p class="sub-footer-left"><a class="subscribe" href="{{@blog.url}}/rss/">Subscribe<i class="fa fa-rss"></i></a></p>
         <p class="sub-footer-right">Published with <a href="https://ghost.org">Ghost</a></p>

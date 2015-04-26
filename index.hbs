@@ -1,11 +1,6 @@
 {{!< default}}
 {{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
 
-{{! The big featured header }}
-{{!-- <nav class="main-nav">
-    {{> "menu-activator-icon"}}
-</nav> --}}
-
 <header class="main-header js-blog-bg-image {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
     <div class="main-header-content">
         {{#if @blog.logo}}
@@ -14,7 +9,7 @@
         </div>
         {{/if}}
         <h1 class="page-title js-bg-check"><span><a href="{{@blog.url}}">{{@blog.title}}</a></span></h1>
-        <h2 class="page-description js-bg-check"><span>{{@blog.description}}</span></h2>
+        <p class="page-description js-bg-check"><span>{{@blog.description}}</span></p>
     </div>
 </header>
 
@@ -23,3 +18,21 @@
     {{! The tag below includes the post loop - partials/loop.hbs }}
     {{> "loop"}}
 </main>
+<section class="index-author-info">
+    <div class="row">
+        <section class="post-author small-12 columns">
+            {{#if posts.[0].author.image}}
+                <img src="{{posts.[0].author.image}}" class="post-author-avatar" alt="{{posts.[0].author.name}}">
+            {{/if}}
+            {{#if posts.[0].author.name}}
+                <h1><a href="{{@blog.url}}/about" class="author-link-name">{{posts.[0].author.name}}</a></h1>
+            {{/if}}
+            {{#if posts.[0].author.website}}
+                <p><a href="{{posts.[0].author.website}}" class="author-website">{{posts.[0].author.website}}</a></p>
+            {{/if}}
+            {{#if posts.[0].author.bio}}
+                <p>{{posts.[0].author.bio}}</p>
+            {{/if}}
+        </section>
+    </div>
+</section>

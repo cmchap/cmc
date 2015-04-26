@@ -16,7 +16,7 @@
     {{! Styles - Foundation 5 included}}
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,500,600,700,900">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
     {{!-- styles for syntax highlighter you will find more here: https://github.com/isagalaev/highlight.js/tree/master/src/styles just change .min.css file name below --}}
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/monokai_sublime.min.css">
@@ -29,7 +29,7 @@
     <script src="{{asset "js/vendor/modernizr.js"}}"></script>
 </head>
 <body class="{{body_class}}">
-
+<div class="page-wrapper">
     <nav class="top-bar" data-topbar role="navigation">
     {{!-- <ul class="title-area"><li class="name"></li></ul> --}}
     <ul class="title-area">
@@ -50,18 +50,8 @@
 
     {{! Everything else gets inserted here }}
     {{{body}}}
-
+</div>
     {{> "footer"}}
-
-    {{! Document borders}}
-{{!--     <div class="tborder"></div>
-    <div class="rborder"></div>
-    <div class="bborder"></div>
-    <div class="lborder"></div> --}}
-
-{{!--     {{#if @blog.navigation}}
-        {{navigation}}
-    {{/if}} --}}
     {{! Ghost outputs important scripts and data with this tag }}
     {{ghost_foot}}
 
