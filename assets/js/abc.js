@@ -42,13 +42,14 @@ var abc = (function ($) {
         }
     },
 
-    // resizeIframe = function() {
-    //     $("iframe").wrap('<div class="flex-video"></div>');
-    // },
-
     // https://highlightjs.org/
     syntaxHighlighter = function () {
         hljs.initHighlightingOnLoad();
+    },
+
+    //Foundation Flex-Video wrapper
+    flexvideo = function () {
+        $("iframe").wrap('<div class="flex-video"></div>');
     },
 
     // abc javascripts initialization
@@ -57,7 +58,7 @@ var abc = (function ($) {
         $(document).foundation();
         headerTitles();
         syntaxHighlighter();
-        // resizeIframe();
+        flexvideo();
     };
 
     return {

@@ -8,7 +8,10 @@
 // Behold, here are all the Foundation components.
 // You can choose only needed ones
 // grid is mandatory
+
+// @import "foundation/variables";
 @import "foundation/components/grid";
+@import "foundation/components/global";
 @import "foundation/components/accordion";
 @import "foundation/components/alert-boxes";
 @import "foundation/components/block-grid";
@@ -237,8 +240,8 @@ blockquote {
     .author-logo-container {
         padding: rem-calc(15) rem-calc(40);
         img {
-            max-width: rem-calc(180);
-            max-height: rem-calc(180);
+            max-width: rem-calc(100);
+            max-height: rem-calc(100);
         }
     }
     .author-logo-container {
