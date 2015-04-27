@@ -13,10 +13,10 @@
     {{> "menu-activator-icon"}}
 </nav> --}}
 <header class="post-view-header js-blog-bg-image {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
-    <div class="post-header-content">
-        <h1 class="post-title js-bg-check">{{title}}</h1>
-        <section class="post-meta js-bg-check">
-            <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMM Do, YYYY"}}</time>
+    <div class="post-header-content js-bg-check">
+        <h1 class="post-title">{{title}}</h1>
+        <section class="post-meta">
+            <p><a href="{{url}}"><time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMM Do, YYYY"}}</time></a></p>
         </section>
     </div>
 </header>
@@ -84,30 +84,27 @@
 
         {{! Everything inside the #author tags pulls data from the author }}
         {{#author}}
-            <section class="author-info">
-                <div class="row">
-                    <section class="post-author small-12 columns">
-                        {{#if image}}
-                            <img src="{{image}}" class="post-author-avatar" alt="{{name}}">
-                        {{/if}}
-                        {{#if name}}
-                            <span class="author-label">Author</span>
-                            <h1><a href="{{url}}" class="author-link-name">{{name}}</a></h1>
-                        {{/if}}
-                        {{#if website}}
-                            <p><a href="{{website}}" class="author-website">{{website}}</a></p>
-                        {{/if}}
-                        {{#if bio}}
-                            <p>{{bio}}</p>
-                        {{/if}}
-                    </section>
-                </div>
-            </section>
+        <section class="index-author-info">
+            {{#if image}}
+                <img src="{{image}}" class="post-author-avatar" alt="{{name}}">
+            {{/if}}
+            <div class="author-info-text">
+            {{#if name}}
+                    <h1><a href="{{@blog.url}}/about" class="author-link-name">{{name}}</a></h1>
+                {{/if}}
+                {{#if website}}
+                    <p><a href="{{website}}" class="author-website">{{website}}</a></p>
+                {{/if}}
+                {{#if bio}}
+                    <p>{{bio}}</p>
+                {{/if}}
+            </div>
+        </section>
         {{/author}}
 
-        <section class="disqus">
+{{!--         <section class="disqus">
             {{> disqus}}
-        </section>
+        </section> --}}
 
     </article>
 

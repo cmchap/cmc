@@ -1394,9 +1394,9 @@ $topbar-title-weight: $font-weight-bold;
 
 // Set the link colors and styles for top-level nav
 $topbar-link-color: $header-color;
-$topbar-link-color-hover: $link-color;
-$topbar-link-color-active: $link-color;
-$topbar-link-color-active-hover: $link-color;
+$topbar-link-color-hover: darken($color-main-contrast, 10%);
+$topbar-link-color-active: darken($color-main-contrast, 10%);
+$topbar-link-color-active-hover: darken($color-main-contrast, 10%);
 $topbar-link-weight: $font-weight-bold;
 $topbar-link-font-size: rem-calc(17);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%

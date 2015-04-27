@@ -8,7 +8,7 @@
             <a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>
         </div>
         {{/if}}
-        <h1 class="page-title js-bg-check"><span><a href="{{@blog.url}}">{{@blog.title}}</a></span></h1>
+        <h1 class="page-title js-bg-check">{{@blog.title}}</h1>
         <p class="page-description js-bg-check"><span>{{@blog.description}}</span></p>
     </div>
 </header>
@@ -19,6 +19,22 @@
     {{> "loop"}}
 </main>
 <section class="index-author-info">
+            {{#if posts.[0].author.image}}
+                <img src="{{posts.[0].author.image}}" class="post-author-avatar" alt="{{posts.[0].author.name}}">
+            {{/if}}
+            <div class="author-info-text">
+            {{#if posts.[0].author.name}}
+                    <h1><a href="{{@blog.url}}/about" class="author-link-name">{{posts.[0].author.name}}</a></h1>
+                {{/if}}
+                {{#if posts.[0].author.website}}
+                    <p><a href="{{posts.[0].author.website}}" class="author-website">{{posts.[0].author.website}}</a></p>
+                {{/if}}
+                {{#if posts.[0].author.bio}}
+                    <p>{{posts.[0].author.bio}}</p>
+                {{/if}}
+            </div>
+</section>
+{{!-- <section class="index-author-info">
     <div class="row">
         <section class="post-author small-12 columns">
             {{#if posts.[0].author.image}}
@@ -35,4 +51,4 @@
             {{/if}}
         </section>
     </div>
-</section>
+</section> --}}

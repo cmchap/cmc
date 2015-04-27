@@ -42,6 +42,10 @@ var abc = (function ($) {
         }
     },
 
+    // resizeIframe = function() {
+    //     $("iframe").wrap('<div class="flex-video"></div>');
+    // },
+
     // https://highlightjs.org/
     syntaxHighlighter = function () {
         hljs.initHighlightingOnLoad();
@@ -53,6 +57,7 @@ var abc = (function ($) {
         $(document).foundation();
         headerTitles();
         syntaxHighlighter();
+        // resizeIframe();
     };
 
     return {
