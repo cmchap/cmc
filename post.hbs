@@ -53,51 +53,24 @@
             </div>
         </footer>
 
-        <div class="row post-prev-next-pagination">
-            <div class="prev small-6 columns text-left">
-                {{#prev_post}}
-                    {{!-- you can use here {{image}} too --}}
-                    <div class="prev-next-label">
-                        <a href="{{url}}">
-                            <i class="fa fa-angle-double-left"></i> Previous
-                        </a>
-                    </div>
-                    <a href="{{url}}" class="title">
-                        {{title}}
-                    </a>
-                {{/prev_post}}
-            </div>
-            <div class="next small-6 columns text-right">
-                {{#next_post}}
-                    {{!-- you can use here {{image}} too --}}
-                    <div class="prev-next-label">
-                        <a href="{{url}}">
-                            Next <i class="fa fa-angle-double-right"></i>
-                        </a>
-                    </div>
-                    <a href="{{url}}" class="title">
-                        {{title}}
-                    </a>
-                {{/next_post}}
-            </div>
-        </div>
-
         {{! Everything inside the #author tags pulls data from the author }}
         {{#author}}
         <section class="index-author-info">
-            {{#if image}}
-                <img src="{{image}}" class="post-author-avatar" alt="{{name}}">
-            {{/if}}
-            <div class="author-info-text">
-            {{#if name}}
-                    <h1><a href="{{@blog.url}}/about" class="author-link-name">{{name}}</a></h1>
+            <div class="index-author-info-wrapper">
+                {{#if image}}
+                    <img src="{{image}}" class="post-author-avatar" alt="{{name}}">
                 {{/if}}
-                {{#if website}}
-                    <p><a href="{{website}}" class="author-website">{{website}}</a></p>
-                {{/if}}
-                {{#if bio}}
-                    <p>{{bio}}</p>
-                {{/if}}
+                <div class="author-info-text">
+                {{#if name}}
+                        <h1><a href="{{@blog.url}}/about" class="author-link-name">{{name}}</a></h1>
+                    {{/if}}
+                    {{#if website}}
+                        <p><a href="{{website}}" class="author-website">{{website}}</a></p>
+                    {{/if}}
+                    {{#if bio}}
+                        <p>{{bio}}</p>
+                    {{/if}}
+                </div>
             </div>
         </section>
         {{/author}}

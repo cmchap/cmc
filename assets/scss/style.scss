@@ -79,17 +79,6 @@ a {
     }
 }
 
-blockquote {
-    border-left: 2px solid lighten($color-main-contrast, 50%);
-}
-
-// h1 a, h2 a {
-//     &:hover {
-//         transition: transform 0.2;
-//         transform: scale(1.25);
-//     }
-// }
-
 
 ::-webkit-scrollbar {
     width: rem-calc(3);
@@ -214,8 +203,11 @@ blockquote {
     }
 }
 
-.main-header-content p {
+.main-header-content h4 {
     padding-top: rem-calc(10);
+    font-size: rem-calc(24);
+    font-weight: normal;
+    font-family: $main-font;
 }
 
 .main-header,
@@ -239,9 +231,13 @@ blockquote {
     .post-logo-container,
     .author-logo-container {
         padding: rem-calc(15) rem-calc(40);
-        img {
-            max-width: rem-calc(100);
-            max-height: rem-calc(100);
+        a {
+            height: 100%;
+            width: 100%;
+        }
+        img {   //blog-logo
+            max-width: 65%;
+            // max-height: rem-calc(100);
         }
     }
     .author-logo-container {
@@ -254,7 +250,7 @@ blockquote {
     }
 }
 .main-header {
-    padding: rem-calc(20) rem-calc(30) rem-calc(10) rem-calc(30);
+    padding: rem-calc(20) rem-calc(30) rem-calc(40) rem-calc(30);
     border-bottom: 1px solid darken($color-main-light, 10%);
     h1 {
         font-size: rem-calc(60);
@@ -271,7 +267,7 @@ blockquote {
     @media only screen and (min-width: 40.063em) {
         padding: 12% rem-calc(30);
         &.no-cover {
-            padding: 10% rem-calc(30);
+            padding: rem-calc(40) rem-calc(30);
         }
     }
 }
@@ -469,11 +465,12 @@ blockquote {
             }
         }
         .share {
+            text-align: center;
             border-top: rem-calc(1) solid darken($color-main-light, 10%);
             padding-top: rem-calc(30);
             // padding-bottom: rem-calc(30);
             margin-top: rem-calc(30);
-            // margin-bottom: rem-calc(30);
+            margin-bottom: rem-calc(30);
             a {
                 color: $color-main-contrast;
                 text-decoration: none;
@@ -506,10 +503,15 @@ blockquote {
     background: darken($color-main-light, 5%);
     text-align: center;
     vertical-align: middle;
+    .index-author-info-wrapper {
+        margin: auto;
+        height: rem-calc(280);
+        max-width: rem-calc(500);
+    }
     .author-info-text {
         position: relative;
         top: 50%;
-        transform: translateY(-50%);
+        transform: translateY(-75%);
     }
     .author-label {
         display: block;
@@ -551,7 +553,7 @@ blockquote {
         height: rem-calc(200);
         border-radius: 50%;
         float: none;
-        margin-right: 0;
+        margin-right: auto;
         margin-bottom: rem-calc(20);
         @media only screen and (min-width: 40.063em) {
             margin-right: rem-calc(50);
@@ -566,7 +568,8 @@ blockquote {
         text-align: left;
     }
     @media only screen and (max-width: 40.063em) {
-        height: auto;
+        // height: auto;
+        height: rem-calc(410);
         .author-info-text {
             position: static;
             top: 0;
@@ -586,6 +589,11 @@ blockquote {
     padding-bottom: rem-calc(40);
     // margin-bottom: rem-calc(40);
     background: darken($color-main-light, 5%);
+    .index-author-info-wrapper {
+        margin: auto;
+        height: rem-calc(280);
+        max-width: rem-calc(500);
+    }
     .post-author {
         padding-left: rem-calc(30);
         padding-right: rem-calc(30);
@@ -800,5 +808,28 @@ blockquote {
             transition: transform 0.3s, color 0.3s;
             transform: scale(1.25);
         }
+    }
+}
+
+//
+//Post styling
+//
+
+article.post {
+    position: relative;
+    img {
+        // outline: 1px solid red;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    cite {
+        display: block;
+        width: 100%;
+        text-align: right;
+        font-size: $paragraph-font-size;
+    }
+    blockquote {
+        border-left: 2px solid lighten($color-main-contrast, 50%);
     }
 }

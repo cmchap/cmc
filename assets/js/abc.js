@@ -48,8 +48,12 @@ var abc = (function ($) {
     },
 
     //Foundation Flex-Video wrapper
-    flexvideo = function () {
+    flexVideo = function () {
         $("iframe").wrap('<div class="flex-video"></div>');
+    },
+
+    centerAnchorImages = function () {
+        $("a:has(img)").css({"{display":"block", "margin-left":"auto", "margin-right":"auto"});
     },
 
     // abc javascripts initialization
@@ -58,7 +62,8 @@ var abc = (function ($) {
         $(document).foundation();
         headerTitles();
         syntaxHighlighter();
-        flexvideo();
+        flexVideo();
+        centerAnchorImages();
     };
 
     return {

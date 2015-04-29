@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html>
-<head>
+{{!-- {{#is "post"}}
+    {{block "header-post"}}
+{{else}}
+    <head>
+{{/is}} --}}
+    <head>
     {{! Document Settings }}
     <meta charset="utf-8">
 
     {{! Page Meta }}
-    <title>{{meta_title}}</title>
-    <meta name="description" content="{{meta_description}}">
+{{!--     <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}"> --}}
 
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
-
     {{! Styles - Foundation 5 included}}
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -22,8 +24,23 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/monokai_sublime.min.css">
     <link rel="stylesheet" href="{{asset "css/style.css"}}">
 
+    {{!-- favicons and icons --}}
+    <link rel="shortcut icon" href="{{asset "images/favicon.ico"}}">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{asset "images/apple-icon-57x57-precomposed.png"}}" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{asset "images/apple-icon-72x72-precomposed.png"}}" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{asset "images/apple-icon-114x114-precomposed.png"}}" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{asset "images/apple-icon-144x144-precomposed.png"}}" />
+
+{{!--     {{#is "post"}}
+        {{block "meta-post"}}
+    {{else}}
+
+    {{/is}} --}}
+
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
+    {{!-- You must call meta after you call ghost-head because some of the items in meta override items in ghost_head --}}
+    {{> meta}}
 
     {{! Modernizr }}
     <script src="{{asset "js/vendor/modernizr.js"}}"></script>
